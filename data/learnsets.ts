@@ -104,11 +104,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			wildcharge: ["9M"],
 			zenheadbutt: ["9M"],
 		},
-		eventData: [
-			{generation: 9, level: 68, nature: "Quirky", ivs: {hp: 31, atk: 31, def: 28, spa: 31, spd: 28, spe: 31}, moves: ["flamethrower", "collisioncourse", "endure", "terablast"], pokeball: "pokeball"},
-			{generation: 9, level: 72, nature: "Adamant", ivs: {hp: 25, atk: 31, def: 25, spa: 31, spd: 25, spe: 31}, moves: ["gigaimpact", "bulkup", "collisioncourse", "flamethrower"]},
-		],
-		eventOnly: true,
+		
 	},
 		eventData: [
 			{generation: 3, level: 70, moves: ["sweetscent", "growth", "solarbeam", "synthesis"], pokeball: "pokeball"},
