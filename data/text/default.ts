@@ -339,6 +339,13 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		end: "  The weirdness disappeared from the battlefield!",
 		block: "  [POKEMON] is protected by the Psychic Terrain!",
 	},
+	eclipse: {
+		weatherName: "Total Eclipse",
+		start: "  A total eclipse is protecting Dark-type Pok\u00E9mon!",
+		end: "  The mysterious eclipse has dissipated!",
+		activate: "  The mysterious eclipse weakened the attack!",
+		block: "  The mysterious eclipse shows no signs of faltering!",
+	},
 
 	// field effects
 	gravity: {

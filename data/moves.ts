@@ -22084,6 +22084,44 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+	eclipse: {
+		num: 3000,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Eclipse",
+		pp: 1,
+		priority: 0,
+		flags: { nonsky: 1, metronome: 1 },
+		terrain: 'eclipse',
+		condition: {
+			effectType: 'Terrain',
+			duration: 0,
+			oonEffectivenessPriority: -1,
+			onEffectiveness(typeMod, target, type, move) {
+				if (move && move.effectType === 'Move' && move.category !== 'Status' && type === 'Dark' && typeMod > 0) {
+					this.add('-fieldactivate', 'Eclipse');
+					return 0;
+				}
+			},
+			onFieldStart(field, source, effect) {
+				this.add('-terrain', 'Eclipse', '[from] ability: ' + effect.name, `[of] ${source}`);
+			},
+			onFieldResidualOrder: 1,
+			onFieldResidual() {
+				this.add('-terrain', 'Eclipse', '[upkeep]');
+				this.eachEvent('Terrain');
+			},
+			onFieldEnd() {
+				this.add('-terrain', 'none');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Dark",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Beautiful",
+	},
 
 	// CAP moves
 

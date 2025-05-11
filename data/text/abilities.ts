@@ -2261,6 +2261,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		activate: "  [POKEMON] underwent a heroic transformation!",
 	},
+	eclipse: {
+		name: "Eclipse",
+		desc: "On switch-in, the terrain becomes Eclipse, which removes the weaknesses of the Dark type from Dark-type Pokemon. This terrain remains in effect until this Ability is no longer active for any Pokemon.",
+		shortDesc: "On switch-in, a total eclipse begins until this Ability is not active in battle.",
+	},
 
 	// CAP
 	mountaineer: {
