@@ -5592,10 +5592,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(source) {
 			this.field.setWeather('deltastream');
 		},
-		//onAnySetWeather(target, source, weather) {
-			//const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
-			//if (this.field.getWeather().id === 'deltastream' && !strongWeathers.includes(weather.id)) return false;
-		},
 		onEnd(pokemon) {
 			if (this.field.weatherState.source !== pokemon) return;
 			for (const target of this.getAllActive()) {
