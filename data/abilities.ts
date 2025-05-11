@@ -5590,10 +5590,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	eclipse: {
 		onStart(source) {
-			this.field.setWeather('deltastream');
+			this.field.setTerrain('grassyterrain');
 		},
 		onEnd(pokemon) {
-			if (this.field.weatherState.source !== pokemon) return;
+			if (this.field.terrainState.source !== pokemon) return;
 			for (const target of this.getAllActive()) {
 				if (target === pokemon) continue;
 				if (target.hasAbility('eclipse')) {
@@ -5601,7 +5601,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return;
 				}
 			}
-			this.field.clearWeather();
+			this.field.clearTerrain();
 		},
 		flags: {},
 		name: "Eclipse",
