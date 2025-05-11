@@ -10,7 +10,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 303,
 		color: "Red",
 		tags: ["Restricted Legendary"],
-		eggGroups: ["Undiscovered"],
+		eggGroups: ["Undiscovered"], 
 	},
 	ivysaur: {
 		num: 2,
@@ -3999,9 +3999,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	murkrow: {
 		num: 198,
 		name: "Murkrow",
-		types: ["Dark", "Flying"],
-		baseStats: { hp: 60, atk: 85, def: 42, spa: 85, spd: 42, spe: 91 },
-		abilities: { 0: "Insomnia", 1: "Super Luck", H: "Prankster" },
+		types: ["Dark", "Fairy"],
+		baseStats: { hp: 110, atk: 44, def: 90, spa: 130, spd: 90, spe: 136 },
+		abilities: { 0: "Prankster", 1: "Hadron Engine", H: "No Guard" },
 		heightm: 0.5,
 		weightkg: 2.1,
 		color: "Black",

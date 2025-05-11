@@ -5588,6 +5588,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 278,
 	},
+	eclipse: {
+		onStart(source) {
+			this.field.setWeather('deltastream');
+		},
+		//onAnySetWeather(target, source, weather) {
+			//const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
+			//if (this.field.getWeather().id === 'deltastream' && !strongWeathers.includes(weather.id)) return false;
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('eclipse')) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		flags: {},
+		name: "Eclipse",
+		rating: 4,
+		num: 279,
+	},
 
 	// CAP
 	mountaineer: {
