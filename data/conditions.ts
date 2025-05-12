@@ -757,15 +757,15 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 				}
 			},
 			onFieldStart(field, source, effect) {
-				this.add('-terrain', 'Eclipse', '[from] ability: ' + effect.name, `[of] ${source}`);
+				this.add('-fieldstart', 'Eclipse', '[from] ability: ' + effect.name, `[of] ${source}`);
 			},
 			onFieldResidualOrder: 1,
 			onFieldResidual() {
-				this.add('-terrain', 'Eclipse', '[upkeep]');
+				this.add('-fieldsart', 'Eclipse', '[upkeep]');
 				this.eachEvent('Terrain');
 			},
 			onFieldEnd() {
-				this.add('-terrain', 'none');
+				this.add('-fieldend', 'none');
 			},
 	},
 
