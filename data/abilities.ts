@@ -5592,6 +5592,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(source) {
 			this.field.setTerrain('eclipse');
 		},
+		onAnySetTerrain(target, source, terrain) {
+			if (this.field.getTerrain().id === 'eclipse') return false;
+		},
 		onEnd(pokemon) {
 			if (this.field.terrainState.source !== pokemon) return;
 			for (const target of this.getAllActive()) {
