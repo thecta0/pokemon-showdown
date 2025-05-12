@@ -746,12 +746,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	eclipse: {
-		name: 'DeltaStream',
+		name: 'Eclipse',
 		effectType: 'Terrain',
 		duration: 0,
 		effectType: 'Terrain',
 			duration: 0,
-			oonEffectivenessPriority: -1,
+			onEffectivenessPriority: -1,
 			onEffectiveness(typeMod, target, type, move) {
 				if (move && move.effectType === 'Move' && move.category !== 'Status' && type === 'Dark' && typeMod > 0) {
 					this.add('-fieldactivate', 'Eclipse');
@@ -769,7 +769,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			onFieldEnd() {
 				this.add('-terrain', 'none');
 			},
-		},
 	},
 
 	dynamax: {
