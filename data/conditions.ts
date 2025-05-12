@@ -749,8 +749,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'Eclipse',
 		effectType: 'Terrain',
 		duration: 0,
-		effectType: 'Terrain',
-			duration: 0,
 			onEffectivenessPriority: -1,
 			onEffectiveness(typeMod, target, type, move) {
 				if (move && move.effectType === 'Move' && move.category !== 'Status' && type === 'Dark' && typeMod > 0) {
