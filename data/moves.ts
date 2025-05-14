@@ -8051,8 +8051,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Grass",
-		zMove: { boost: { def: 1 } },
+		type: "Dark",
+		zMove: { boost: { spa: 1 } },
 		contestType: "Beautiful",
 	}, 
 	gravapple: {
