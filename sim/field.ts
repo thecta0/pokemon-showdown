@@ -176,6 +176,12 @@ export class Field {
 
 	clearTerrain() {
 		if (!this.terrain) return false;
+		const eclipseActive = this.battle.sides.some(side =>
+   				 side.active.some(pokemon => !pokemon.fainted && pokemon.getAbility().id === 'eclipse')
+ 				 );
+		if (eclipseActive && this.terrain === 'eclipse') {
+			return false;
+		}
 		const prevTerrain = this.getTerrain();
 		this.battle.singleEvent('FieldEnd', prevTerrain, this.terrainState, this);
 		this.terrain = '';

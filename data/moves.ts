@@ -8024,7 +8024,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Eclipse",
 		pp: 1,
 		priority: 0,
-		flags: { nonsky: 1, metronome: 1 },
+		flags: { nonsky: 1 },
 		terrain: 'eclipse',
 		condition: {
 			effectType: 'Terrain',

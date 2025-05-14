@@ -5592,11 +5592,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(source) {
 			this.field.setTerrain('eclipse');
 		},
-		// onTerrainChange(target, source, sourceEffect) {
-		//	const strongTerrains = ['eclipse'];
-		//	if (this.field.getTerrain().id === 'eclipse' && !strongTerrains.includes(sourceEffect.id)) return false;
-		//
-		// },
+		// part of the abilities logic is found in the "field.ts" file, located in the "sim" folder
 		onEnd(pokemon) {
 			if (this.field.terrainState.source !== pokemon) return;
 			for (const target of this.getAllActive()) {
@@ -5611,7 +5607,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		flags: {},
 		name: "Eclipse",
 		rating: 4,
-		num: 10000,
+		num: 10000, //just didnt know what to put here :p
 	},
 
 	// CAP
