@@ -134,6 +134,16 @@ export class Field {
 		if (source === 'debug') source = this.battle.sides[0].active[0];
 		if (!source) throw new Error(`setting terrain without a source`);
 
+		const eclipseActive = this.battle.sides.some(side =>
+   		 side.active.some(pokemon => !pokemon.fainted && pokemon.getAbility().id === 'eclipse')
+ 		 );
+ 		 if (eclipseActive && this.terrain && this.terrain !== status.id) {
+  		  this.battle.debug(`Eclipse prevents changing terrain from ${this.terrain} to ${status.id}`);
+  		  this.battle.add('-fail', source, 'move: ' + (sourceEffect?.name || 'terrain move'), '[from] ability: Eclipse');
+  		  return false;
+		  }
+
+
 		if (this.terrain === status.id) return false;
 		const prevTerrain = this.terrain;
 		const prevTerrainState = this.terrainState;
