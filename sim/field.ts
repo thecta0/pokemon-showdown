@@ -139,7 +139,15 @@ export class Field {
  		 );
  		 if (eclipseActive && this.terrain && this.terrain !== status.id) {
   		  this.battle.debug(`Eclipse prevents changing terrain from ${this.terrain} to ${status.id}`);
-  		  this.battle.add('-fail', source, 'move: ' + (sourceEffect?.name || 'terrain move'), '[from] ability: Eclipse');
+  		  const eclipseUser = this.battle.sides
+  			.flatMap(side => side.active)
+  			.find(pokemon => !pokemon.fainted && pokemon.getAbility().id === 'eclipse');
+
+			if (eclipseUser) {
+ 			 this.battle.add('-fail', source, 'move: ' + (sourceEffect?.name || 'terrain move'), '[from] ability: Eclipse', '[of] ' + eclipseUser);
+			} else {
+			  this.battle.add('-fail', source, 'move: ' + (sourceEffect?.name || 'terrain move'), '[from] ability: Eclipse');
+			}
   		  return false;
 		  }
 
