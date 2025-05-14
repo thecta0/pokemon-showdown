@@ -137,7 +137,7 @@ export class Field {
 		const eclipseActive = this.battle.sides.some(side =>
    		 side.active.some(pokemon => !pokemon.fainted && pokemon.getAbility().id === 'eclipse')
  		 );
- 		 if (eclipseActive && this.terrain && this.terrain !== status.id) {
+ 		 if (eclipseActive && this.terrain && this.terrain !== status.id && status.id !== 'eclipse') {
   		  this.battle.debug(`Eclipse prevents changing terrain from ${this.terrain} to ${status.id}`);
   		  const eclipseUser = this.battle.sides
   			.flatMap(side => side.active)
