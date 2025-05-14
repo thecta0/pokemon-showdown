@@ -18470,7 +18470,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dark", "Psychic"],
 		gender: "N",
 		baseStats: { hp: 80, atk: 105, def: 90, spa: 120, spd: 90, spe: 115 },
-		abilities: { 0: "Aura Break", 1: "Full Metal Body" },
+		abilities: { 0: "Aura Break", 1: "Full Metal Body", H: "Eclipse" },
 		heightm: 0.3,
 		weightkg: 0.3,
 		color: "Black",
