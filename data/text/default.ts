@@ -340,7 +340,6 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		block: "  [POKEMON] is protected by the Psychic Terrain!",
 	},
 	eclipse: {
-		weatherName: "Total Eclipse",
 		start: "  A total eclipse is protecting Dark-type Pok\u00E9mon!",
 		end: "  The mysterious eclipse has dissipated!",
 		activate: "  The mysterious eclipse weakened the attack!",

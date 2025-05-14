@@ -5609,7 +5609,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		flags: {},
 		name: "Eclipse",
 		rating: 4,
-		num: 279,
+		num: 10000,
 	},
 
 	// CAP

@@ -8016,6 +8016,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful",
 	},
+                eclipse: {
+		num: 10000,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Eclipse",
+		pp: 1,
+		priority: 0,
+		flags: { nonsky: 1, metronome: 1 },
+		terrain: 'eclipse',
+		condition: {
+			effectType: 'Terrain',
+			duration: 0,
+			onEffectivenessPriority: -1,
+		        onEffectiveness(typeMod, target, type, move) {
+			        if (move && move.effectType === 'Move' && move.category !== 'Status' && type === 'Dark' && typeMod > 0) {
+				          this.add('-fieldactivate', 'Eclipse');
+				          return 0;
+			          }
+		          },
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Eclipse', '[from] ability: ' + effect.name, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Eclipse');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Eclipse');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Grass",
+		zMove: { boost: { def: 1 } },
+		contestType: "Beautiful",
+	}, 
 	gravapple: {
 		num: 788,
 		accuracy: 100,

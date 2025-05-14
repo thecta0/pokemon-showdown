@@ -742,32 +742,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			this.eachEvent('Weather');
 		},
 		onFieldEnd() {
-			this.add('-weather', 'none');
+			this.add('-weather', 'none'); 
 		},
 	},
-	eclipse: {
-		name: 'Eclipse',
-		effectType: 'Terrain',
-		duration: 0,
-			onEffectivenessPriority: -1,
-			onEffectiveness(typeMod, target, type, move) {
-				if (move && move.effectType === 'Move' && move.category !== 'Status' && type === 'Dark' && typeMod > 0) {
-					this.add('-fieldactivate', 'Eclipse');
-					return 0;
-				}
-			},
-			onFieldStart(field, source, effect) {
-				this.add('-fieldstart', 'Eclipse', '[from] ability: ' + effect.name, `[of] ${source}`);
-			},
-			onFieldResidualOrder: 1,
-			onFieldResidual() {
-				this.add('-fieldsart', 'Eclipse', '[upkeep]');
-				this.eachEvent('Terrain');
-			},
-			onFieldEnd() {
-				this.add('-fieldend', 'none');
-			},
-	},
+
 
 	dynamax: {
 		name: 'Dynamax',
