@@ -5615,7 +5615,7 @@ limitless: {
 			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch' || move.callsMove) return;
 			const type = move.type;
                         const possibleTypes = ['fire', 'electric', 'ice', 'flying'];
-			if (type && type !== '???' && source.getTypes().join() !== type && possibleTypes.includes(type.id)) {
+			if (type && type !== '???' && source.getTypes().join() !== type && type === possibleTypes.includes(type.id)) {
 				if (!source.setType(type)) return; 
 				this.add('-start', source, 'typechange', type, '[from] ability: Limitless');
                                 this.add('-start', target, 'typeadd', 'Dragon', '[from] ability: Limitless');
