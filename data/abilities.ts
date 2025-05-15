@@ -5609,16 +5609,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 10000, //just didnt know what to put here :p
 	},
-limitless: {
+	limitless: {
 		onPrepareHit(source, target, move) {
-
+			if (this.effectState.protean === source.previouslySwitchedIn) return;
 			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch' || move.callsMove) return;
 			const type = move.type;
-                        const possibleTypes = ['fire', 'electric', 'ice', 'flying'];
-			if (type && type !== '???' && source.getTypes().join() !== type && type === possibleTypes.includes(type.id)) {
+                        const possibleTypes = ['Fire', 'Electric', 'Ice', 'Flying'];
+			if (type && type !== '???' && source.getTypes().join() !== type && possibleTypes.includes(type)) {
 				if (!source.setType(type)) return; 
 				this.add('-start', source, 'typechange', type, '[from] ability: Limitless');
-                                this.add('-start', target, 'typeadd', 'Dragon', '[from] ability: Limitless');
+                               // this.add('-start', target, 'typeadd', 'Dragon', '[from] ability: Limitless');
 			}
 		},
 		flags: {},
