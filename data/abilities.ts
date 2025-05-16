@@ -5618,7 +5618,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const finalType = ['Dragon', type];
 			if (type && type !== '???' && source.getTypes().join() !== type && possibleTypes.includes(type)) {
 				if (!source.setType(type)) return; 
-				this.add('-start', source, 'typechange', finalType, '[from] ability: Limitless');
+				this.add('-start', source, 'typechange', finalType.join('/'), '[from] ability: Limitless');
 			}
 		},
 		flags: {},
