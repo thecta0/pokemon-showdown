@@ -5613,7 +5613,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onPrepareHit(source, target, move) {
 			if (this.effectState.protean === source.previouslySwitchedIn) return;
 			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch' || move.callsMove) return;
-			const type = move.type;
+			const type = ['Dragon', move.type];
                         const possibleTypes = ['Fire', 'Electric', 'Ice', 'Flying'];
 			if (type && type !== '???' && source.getTypes().join() !== type && possibleTypes.includes(type)) {
 				if (!source.setType(type)) return; 
