@@ -5626,6 +5626,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 10001,
 	},
+	heavenlypresence: {
+		onStart(source) {
+			this.field.addPseudoWeather('gravity');
+		},
+		flags: {},
+		name: "Heavenly Presence",
+		rating: 4,
+		num: 10002,
+	},
 	// CAP
 	mountaineer: {
 		onDamage(damage, target, source, effect) {
