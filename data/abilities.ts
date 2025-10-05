@@ -5636,11 +5636,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 10002,
 	},
 	weatherreport: {
-		onWeather(target, source, effect) {
-			if (effect.id === 'sunnyday') {
+		onStart(pokemon) {
+			if (this.field.isWeather('sunnyday')) {
 				this.field.setWeather('raindance');
-			} else if(effect.id === 'raindance') {
+			} else if (this.field.isWeather('raindance')) {
 				this.field.setWeather('sunnyday');
+			} else if (this.field.isWeather('sandstorm')) {
+				this.field.setWeather('snowscape');
+			} else if (this.field.isWeather('snowscape')) {
+				this.field.setWeather('sandstorm');
 			}
 		},
 		flags: {},
