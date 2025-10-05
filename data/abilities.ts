@@ -5635,6 +5635,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 10002,
 	},
+	reversal: {
+		onWeather(target, source, effect) {
+			if (effect.id === 'sunnyday') {
+				this.field.setWeather('raindance');
+			} elseif(effect.id === 'raindance') {
+				this.field.setWeather('sunnyday');
+			}
+		},
+		flags: {},
+		name: "Reversal",
+		rating: 4,
+		num: 10003,
+	},
 	// CAP
 	mountaineer: {
 		onDamage(damage, target, source, effect) {
