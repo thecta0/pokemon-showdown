@@ -5635,16 +5635,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 10002,
 	},
-	reversal: {
+	weatherreport: {
 		onWeather(target, source, effect) {
 			if (effect.id === 'sunnyday') {
 				this.field.setWeather('raindance');
-			} elseif(effect.id === 'raindance') {
+			} else if(effect.id === 'raindance') {
 				this.field.setWeather('sunnyday');
 			}
 		},
 		flags: {},
-		name: "Reversal",
+		name: "Weather Report",
 		rating: 4,
 		num: 10003,
 	},
